@@ -60,19 +60,17 @@ extension PushNotifier {
                                   "debug": false]
         #if DEBUG
         obj["debug"] = true
+        print("Device Token: \(token)")
         #endif
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        request.httpBody = try! JSONSerialization.data(withJSONObject: obj)
-        
-        #if DEBUG
-        let pretty = try! JSONSerialization.data(withJSONObject: obj,
-                                                 options: .prettyPrinted)
-        print("Device Token: \(token)")
-        print(String(data: pretty, encoding: .utf8)!)
-        #endif
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: obj)
+        } catch {
+            print("Error: \(error) - unable to decode token")
+        }
         
         session.dataTask(with: request).resume()
     }

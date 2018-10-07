@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UserNotifications
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
@@ -15,7 +15,6 @@ class AppDelegate: UIResponder {
     var window: UIWindow?
     
     private let notificationHandler = NotificationHandler()
-    
 }
 
 

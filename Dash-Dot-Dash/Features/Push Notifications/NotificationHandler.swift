@@ -21,6 +21,7 @@ final class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
 }
 
 
+// MARK: - PushNotifier implementation - adds convenience methods
 extension NotificationHandler: PushNotifier {
     
     /// Convenience method to register for push notifications,
