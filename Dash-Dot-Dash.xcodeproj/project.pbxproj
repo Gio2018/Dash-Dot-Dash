@@ -15,6 +15,8 @@
 		3F5C6267216937E0004517A0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6266216937E0004517A0 /* NotificationController.swift */; };
 		3F5C6269216937E0004517A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5C6268216937E0004517A0 /* Assets.xcassets */; };
 		3F5C626E216937E0004517A0 /* Dash-Dot-Dash Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F5C6251216937DF004517A0 /* Dash-Dot-Dash Watch.app */; };
+		3F5C66C72169D58E004517A0 /* PushNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C66C62169D58E004517A0 /* PushNotifier.swift */; };
+		3F5C66CA2169E631004517A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C66C92169E631004517A0 /* Constants.swift */; };
 		3FDE9E1821688AD700AF3BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */; };
 		3FDE9E1A21688AD700AF3BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1921688AD700AF3BEB /* ViewController.swift */; };
 		3FDE9E1D21688AD700AF3BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1B21688AD700AF3BEB /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		3F5C626A216937E0004517A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5C626B216937E0004517A0 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3F5C627721699B4F004517A0 /* Dash-Dot-Dash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dash-Dot-Dash.entitlements"; sourceTree = "<group>"; };
+		3F5C66C62169D58E004517A0 /* PushNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifier.swift; sourceTree = "<group>"; };
+		3F5C66C92169E631004517A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3FDE9E1421688AD700AF3BEB /* Dash-Dot-Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dash-Dot-Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDE9E1921688AD700AF3BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,9 +168,35 @@
 		3F5C627C21699F2F004517A0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				3FDE9E1921688AD700AF3BEB /* ViewController.swift */,
+				3F5C66C82169E608004517A0 /* Networking */,
+				3F5C66C52169D4D6004517A0 /* Push Notifications */,
+				3F5C66C42169D4C8004517A0 /* UI */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		3F5C66C42169D4C8004517A0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3FDE9E1921688AD700AF3BEB /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3F5C66C52169D4D6004517A0 /* Push Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C66C62169D58E004517A0 /* PushNotifier.swift */,
+			);
+			path = "Push Notifications";
+			sourceTree = "<group>";
+		};
+		3F5C66C82169E608004517A0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C66C92169E631004517A0 /* Constants.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		3FDE9E0B21688AD700AF3BEB = {
@@ -350,6 +380,8 @@
 			files = (
 				3FDE9E1A21688AD700AF3BEB /* ViewController.swift in Sources */,
 				3FDE9E1821688AD700AF3BEB /* AppDelegate.swift in Sources */,
+				3F5C66C72169D58E004517A0 /* PushNotifier.swift in Sources */,
+				3F5C66CA2169E631004517A0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
