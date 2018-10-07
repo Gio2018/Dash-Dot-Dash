@@ -10,28 +10,26 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder {
 
     var window: UIWindow?
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        registerForPushNotifications(application: application, delegate: self)
-        return true
-    }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        registerProvider(at: NetworkingConstants.providerURL, using: deviceToken)
-    }
+    private let notificationHandler = NotificationHandler()
+    
 }
 
 
-// MARK: - Push Notifications Handler
-extension AppDelegate: PushNotifier, UNUserNotificationCenterDelegate {
+// MARK: - Application Delegate
+extension AppDelegate: UIApplicationDelegate{
+
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        notificationHandler.registerForPushNotifications(application: application)
+        return true
+    }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound, .badge])
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        notificationHandler.registerProvider(using: deviceToken)
     }
 }

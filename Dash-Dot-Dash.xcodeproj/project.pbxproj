@@ -17,6 +17,7 @@
 		3F5C626E216937E0004517A0 /* Dash-Dot-Dash Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F5C6251216937DF004517A0 /* Dash-Dot-Dash Watch.app */; };
 		3F5C66C72169D58E004517A0 /* PushNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C66C62169D58E004517A0 /* PushNotifier.swift */; };
 		3F5C66CA2169E631004517A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C66C92169E631004517A0 /* Constants.swift */; };
+		3F5C68F0216A9E83004517A0 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C68EF216A9E83004517A0 /* NotificationHandler.swift */; };
 		3FDE9E1821688AD700AF3BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */; };
 		3FDE9E1A21688AD700AF3BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1921688AD700AF3BEB /* ViewController.swift */; };
 		3FDE9E1D21688AD700AF3BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1B21688AD700AF3BEB /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		3F5C627721699B4F004517A0 /* Dash-Dot-Dash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dash-Dot-Dash.entitlements"; sourceTree = "<group>"; };
 		3F5C66C62169D58E004517A0 /* PushNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifier.swift; sourceTree = "<group>"; };
 		3F5C66C92169E631004517A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F5C68EF216A9E83004517A0 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		3FDE9E1421688AD700AF3BEB /* Dash-Dot-Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dash-Dot-Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDE9E1921688AD700AF3BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		3F5C66C52169D4D6004517A0 /* Push Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				3F5C68EF216A9E83004517A0 /* NotificationHandler.swift */,
 				3F5C66C62169D58E004517A0 /* PushNotifier.swift */,
 			);
 			path = "Push Notifications";
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5C68F0216A9E83004517A0 /* NotificationHandler.swift in Sources */,
 				3FDE9E1A21688AD700AF3BEB /* ViewController.swift in Sources */,
 				3FDE9E1821688AD700AF3BEB /* AppDelegate.swift in Sources */,
 				3F5C66C72169D58E004517A0 /* PushNotifier.swift in Sources */,
