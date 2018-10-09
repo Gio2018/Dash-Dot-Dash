@@ -13,26 +13,38 @@ import UserNotifications
 
 class NotificationController: WKUserNotificationInterfaceController {
 
+    @IBOutlet var label: WKInterfaceLabel!
+    @IBOutlet var image: WKInterfaceImage!
+    
     override init() {
-        // Initialize variables here.
         super.init()
         
-        // Configure interface objects here.
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+    override func didAppear() {
+        super.didAppear()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            WKInterfaceDevice.current().play(.directionUp)
+//        }
+        Timer.scheduledTimer(withTimeInterval: 0.240, repeats: false) {_ in
+            WKInterfaceDevice.current().play(.notification)
+        }
     }
+    
 
-    override func didReceive(_ notification: UNNotification) {
-        // This method is called when a notification needs to be presented.
-        // Implement it if you use a dynamic notification interface.
-        // Populate your dynamic notification interface as quickly as possible.
+    override func didReceive(_ notification: UNNotification, withCompletion completionHandler: @escaping (WKUserNotificationInterfaceType) -> Void) {
+        WKInterfaceDevice.current().play(.success)
+        //Timer.scheduledTimer(withTimeInterval: 0.120, repeats: false) { _ in
+            
+        //}
+        
+        let notificationTitle = notification.request.content.title
+        label.setText(notificationTitle)
+        
+        completionHandler(.custom)
     }
 }

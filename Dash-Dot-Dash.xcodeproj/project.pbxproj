@@ -20,6 +20,8 @@
 		3F5C68F0216A9E83004517A0 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C68EF216A9E83004517A0 /* NotificationHandler.swift */; };
 		3F5C6902216AA525004517A0 /* PushNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6901216AA525004517A0 /* PushNotifierTests.swift */; };
 		3F5C6904216AA749004517A0 /* Mock Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6903216AA749004517A0 /* Mock Objects.swift */; };
+		3F5C6906216AC44A004517A0 /* NotificationHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6905216AC44A004517A0 /* NotificationHandlerTests.swift */; };
+		3F5C690A216BEB30004517A0 /* InteractiveNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */; };
 		3FDE9E1821688AD700AF3BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */; };
 		3FDE9E1A21688AD700AF3BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1921688AD700AF3BEB /* ViewController.swift */; };
 		3FDE9E1D21688AD700AF3BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1B21688AD700AF3BEB /* Main.storyboard */; };
@@ -96,6 +98,8 @@
 		3F5C68F9216AA4D0004517A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5C6901216AA525004517A0 /* PushNotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifierTests.swift; sourceTree = "<group>"; };
 		3F5C6903216AA749004517A0 /* Mock Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock Objects.swift"; sourceTree = "<group>"; };
+		3F5C6905216AC44A004517A0 /* NotificationHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandlerTests.swift; sourceTree = "<group>"; };
+		3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveNotificationController.swift; sourceTree = "<group>"; };
 		3FDE9E1421688AD700AF3BEB /* Dash-Dot-Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dash-Dot-Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDE9E1921688AD700AF3BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				3F5C6268216937E0004517A0 /* Assets.xcassets */,
 				3F5C626A216937E0004517A0 /* Info.plist */,
 				3F5C626B216937E0004517A0 /* PushNotificationPayload.apns */,
+				3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */,
 			);
 			path = "Dash-Dot-Dash Watch Extension";
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				3F5C6901216AA525004517A0 /* PushNotifierTests.swift */,
+				3F5C6905216AC44A004517A0 /* NotificationHandlerTests.swift */,
 			);
 			path = "Push Notifications";
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				3F5C6267216937E0004517A0 /* NotificationController.swift in Sources */,
 				3F5C6265216937E0004517A0 /* ExtensionDelegate.swift in Sources */,
 				3F5C6263216937E0004517A0 /* InterfaceController.swift in Sources */,
+				3F5C690A216BEB30004517A0 /* InteractiveNotificationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5C6906216AC44A004517A0 /* NotificationHandlerTests.swift in Sources */,
 				3F5C6902216AA525004517A0 /* PushNotifierTests.swift in Sources */,
 				3F5C6904216AA749004517A0 /* Mock Objects.swift in Sources */,
 			);

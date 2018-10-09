@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.23.1" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.12"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Dash_Dot_Dash_Watch" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="206" y="259"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -18,30 +21,52 @@
                 <notificationController id="YCC-NB-fut">
                     <items>
                         <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                        <imageView alignment="center" verticalAlignment="center" image="Dash-Dot-Dash-Reverse" contentMode="scaleAspectFill" id="Kid-wO-c6f"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="dddMessage" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
                         <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                        <segue destination="Y4T-Ap-A0J" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="VSs-Vk-gA6"/>
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="172" y="647"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Dash_Dot_Dash_Watch" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="message from..." numberOfLines="0" id="0PF-G5-zWi"/>
+                        <imageView alignment="center" verticalAlignment="center" image="Dash-Dot-Dash-Reverse" contentMode="scaleAspectFill" id="DMy-W3-gSD"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="DMy-W3-gSD" id="kWE-dI-dJh"/>
+                        <outlet property="label" destination="0PF-G5-zWi" id="AeD-5i-G0j"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="474" y="648"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="Niz-AI-uX2">
+        <!--Interactive Notification Controller-->
+        <scene sceneID="Uj7-4i-9iB">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="Y4T-Ap-A0J" customClass="InteractiveNotificationController" customModule="Dash_Dot_Dash_Watch_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="VEI-Lv-A4T"/>
+                        <button width="1" alignment="left" title="play" id="bN2-3c-heb">
+                            <connections>
+                                <action selector="playMessage" destination="Y4T-Ap-A0J" id="IeZ-4P-YCa"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="messageLabel" destination="VEI-Lv-A4T" id="Ank-3l-t7a"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="474" y="348"/>
         </scene>
     </scenes>
 </document>

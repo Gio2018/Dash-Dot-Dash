@@ -13,12 +13,10 @@ import UserNotifications
 protocol PushNotifier {
     /// application requests registration to APNs
     ///
-    /// - Parameter application: current application
+    /// - Parameters:
+    ///   - application: current application
     ///   - delegate: notification center delegate
-    ///   - center: dependancy injection for UNUserNotificationCenter
-    func registerForPushNotifications(application: UIApplication,
-                                      delegate: UNUserNotificationCenterDelegate,
-                                      center: UNUserNotificationCenter)
+    func registerForPushNotifications(application: UIApplication, delegate: UNUserNotificationCenterDelegate)
     /// sets the provider at the specified url and sends over the device token
     ///
     /// - Parameters:
@@ -32,11 +30,16 @@ protocol PushNotifier {
 // MARK: - Default implementation
 extension PushNotifier {
     
-    func registerForPushNotifications(application: UIApplication,
-                                      delegate: UNUserNotificationCenterDelegate,
-                                      center: UNUserNotificationCenter = UNUserNotificationCenter.current()) {
+    func registerForPushNotifications(application: UIApplication, delegate: UNUserNotificationCenterDelegate) {
+        let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.badge, .sound, .alert]) { [weak center, weak delegate] granted, _ in
             guard granted, let center = center, let delegate = delegate else { return }
+            
+            let dashDotDashCategory = UNNotificationCategory(identifier: "dddMessage",
+                                                             actions: [],
+                                                             intentIdentifiers: [],
+                                                             options: [])
+            center.setNotificationCategories([dashDotDashCategory])
             
             center.delegate = delegate
             
@@ -56,8 +59,8 @@ extension PushNotifier {
             $0 + String(format: "%02x", $1)
         }
         
-        var obj: [String: Any] = ["token": token,
-                                  "debug": false]
+        var obj: [String: Any] = ["token": token, "debug": false]
+        
         #if DEBUG
         obj["debug"] = true
         print("Device Token: \(token)")

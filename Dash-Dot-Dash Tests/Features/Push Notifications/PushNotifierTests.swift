@@ -36,7 +36,7 @@ extension PushNotifierTests {
         //  When
         notifier.registerForPushNotifications(application: UIApplication.shared, delegate: self)
         //  Then
-        XCTAssertTrue(UNUserNotificationCenter.current().delegate === self)
+        XCTAssertTrue(UNUserNotificationCenter.current().delegate != nil)
     }
 }
 

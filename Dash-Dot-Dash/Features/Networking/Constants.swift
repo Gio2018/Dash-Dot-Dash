@@ -10,5 +10,6 @@ import Foundation
 
 enum NetworkingConstants {
     
+    // Home localhost: 10.0.1.63
     static let providerURL = "http://10.0.1.63:8080/api/token"
 }
