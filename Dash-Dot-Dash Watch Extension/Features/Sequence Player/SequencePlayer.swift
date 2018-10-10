@@ -13,7 +13,7 @@ import WatchKit
 /// Configuration parameters for an audio + haptic sequence
 struct SequenceConfig {
     var soundFile: String
-    var hapticSequence: [WKHapticType]
+    var hapticSequence: [Int]
     var playSound: Bool
     var playHaptic: Bool
     var musicMode: Bool
@@ -49,12 +49,8 @@ class SequencePlayer {
         if let musicMode = userInfo["musicMode"] as? Bool {
             config.musicMode = musicMode
         }
-        if let hpticSequenceValues = userInfo["hapticSequence"] as? [Int] {
-            hpticSequenceValues.forEach {
-                if let type = WKHapticType(rawValue: $0) {
-                    config.hapticSequence.append(type)
-                }
-            }
+        if let hapticSequence = userInfo["hapticSequence"] as? [Int] {
+            config.hapticSequence = hapticSequence
         }
     }
     
@@ -68,9 +64,17 @@ class SequencePlayer {
         
         if config.playHaptic {
             var delay: TimeInterval = 0.0
-            config.hapticSequence.forEach { type in
-                Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {_ in
-                    WKInterfaceDevice.current().play(type)
+            config.hapticSequence.forEach { sequenceValue in
+                
+                switch sequenceValue {
+                case -1:
+                    delay += 0.6
+                default:
+                    if let type = WKHapticType(rawValue: sequenceValue) {
+                        Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {_ in
+                            WKInterfaceDevice.current().play(type)
+                        }
+                    }
                 }
                 delay += 0.6
             }
