@@ -22,6 +22,10 @@
 		3F5C6904216AA749004517A0 /* Mock Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6903216AA749004517A0 /* Mock Objects.swift */; };
 		3F5C6906216AC44A004517A0 /* NotificationHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6905216AC44A004517A0 /* NotificationHandlerTests.swift */; };
 		3F5C690A216BEB30004517A0 /* InteractiveNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */; };
+		3F5C691A216D0A74004517A0 /* WatchAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6919216D0A74004517A0 /* WatchAudioPlayer.swift */; };
+		3F5C691C216D2735004517A0 /* 5-seconds-of-silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5C691B216D2735004517A0 /* 5-seconds-of-silence.mp3 */; };
+		3F5C6921216D4249004517A0 /* Hooded.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5C6920216D4249004517A0 /* Hooded.mp3 */; };
+		3F5C6926216E83A9004517A0 /* SequencePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6925216E83A9004517A0 /* SequencePlayer.swift */; };
 		3FDE9E1821688AD700AF3BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */; };
 		3FDE9E1A21688AD700AF3BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1921688AD700AF3BEB /* ViewController.swift */; };
 		3FDE9E1D21688AD700AF3BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE9E1B21688AD700AF3BEB /* Main.storyboard */; };
@@ -100,6 +104,10 @@
 		3F5C6903216AA749004517A0 /* Mock Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock Objects.swift"; sourceTree = "<group>"; };
 		3F5C6905216AC44A004517A0 /* NotificationHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandlerTests.swift; sourceTree = "<group>"; };
 		3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveNotificationController.swift; sourceTree = "<group>"; };
+		3F5C6919216D0A74004517A0 /* WatchAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAudioPlayer.swift; sourceTree = "<group>"; };
+		3F5C691B216D2735004517A0 /* 5-seconds-of-silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5-seconds-of-silence.mp3"; sourceTree = "<group>"; };
+		3F5C6920216D4249004517A0 /* Hooded.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hooded.mp3; sourceTree = "<group>"; };
+		3F5C6925216E83A9004517A0 /* SequencePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencePlayer.swift; sourceTree = "<group>"; };
 		3FDE9E1421688AD700AF3BEB /* Dash-Dot-Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dash-Dot-Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDE9E1721688AD700AF3BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDE9E1921688AD700AF3BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,9 +145,9 @@
 		3F5C6252216937DF004517A0 /* Dash-Dot-Dash Watch */ = {
 			isa = PBXGroup;
 			children = (
-				3F5C6253216937DF004517A0 /* Interface.storyboard */,
-				3F5C6256216937E0004517A0 /* Assets.xcassets */,
-				3F5C6258216937E0004517A0 /* Info.plist */,
+				3F5C690B216D0559004517A0 /* Resources */,
+				3F5C690C216D0569004517A0 /* Storyboards */,
+				3F5C690D216D0593004517A0 /* Supporting Files */,
 			);
 			path = "Dash-Dot-Dash Watch";
 			sourceTree = "<group>";
@@ -147,13 +155,10 @@
 		3F5C6261216937E0004517A0 /* Dash-Dot-Dash Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3F5C6262216937E0004517A0 /* InterfaceController.swift */,
-				3F5C6264216937E0004517A0 /* ExtensionDelegate.swift */,
-				3F5C6266216937E0004517A0 /* NotificationController.swift */,
-				3F5C6268216937E0004517A0 /* Assets.xcassets */,
-				3F5C626A216937E0004517A0 /* Info.plist */,
-				3F5C626B216937E0004517A0 /* PushNotificationPayload.apns */,
-				3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */,
+				3F5C6910216D066F004517A0 /* Application Main */,
+				3F5C6911216D06A8004517A0 /* Features */,
+				3F5C690F216D063B004517A0 /* Resources */,
+				3F5C690E216D0613004517A0 /* Supporting Files */,
 			);
 			path = "Dash-Dot-Dash Watch Extension";
 			sourceTree = "<group>";
@@ -230,9 +235,9 @@
 		3F5C68F6216AA4D0004517A0 /* Dash-Dot-Dash Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3F5C6903216AA749004517A0 /* Mock Objects.swift */,
 				3F5C68FF216AA4F0004517A0 /* Features */,
-				3F5C68F9216AA4D0004517A0 /* Info.plist */,
+				3F5C6917216D089F004517A0 /* Mocks */,
+				3F5C6916216D0722004517A0 /* Supporting Files */,
 			);
 			path = "Dash-Dot-Dash Tests";
 			sourceTree = "<group>";
@@ -252,6 +257,133 @@
 				3F5C6905216AC44A004517A0 /* NotificationHandlerTests.swift */,
 			);
 			path = "Push Notifications";
+			sourceTree = "<group>";
+		};
+		3F5C690B216D0559004517A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6256216937E0004517A0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F5C690C216D0569004517A0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6253216937DF004517A0 /* Interface.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3F5C690D216D0593004517A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6258216937E0004517A0 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F5C690E216D0613004517A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C626B216937E0004517A0 /* PushNotificationPayload.apns */,
+				3F5C626A216937E0004517A0 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F5C690F216D063B004517A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6920216D4249004517A0 /* Hooded.mp3 */,
+				3F5C691B216D2735004517A0 /* 5-seconds-of-silence.mp3 */,
+				3F5C6268216937E0004517A0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F5C6910216D066F004517A0 /* Application Main */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6264216937E0004517A0 /* ExtensionDelegate.swift */,
+			);
+			path = "Application Main";
+			sourceTree = "<group>";
+		};
+		3F5C6911216D06A8004517A0 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6912216D06B5004517A0 /* App UI */,
+				3F5C6913216D06E1004517A0 /* Notifications */,
+				3F5C6922216E837D004517A0 /* Sequence Player */,
+				3F5C6918216D0A4C004517A0 /* Watch Audio Player */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3F5C6912216D06B5004517A0 /* App UI */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6262216937E0004517A0 /* InterfaceController.swift */,
+			);
+			path = "App UI";
+			sourceTree = "<group>";
+		};
+		3F5C6913216D06E1004517A0 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6915216D06F5004517A0 /* Dynamic Interactive Notifications */,
+				3F5C6914216D06EA004517A0 /* Dynamic Notifications */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		3F5C6914216D06EA004517A0 /* Dynamic Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6266216937E0004517A0 /* NotificationController.swift */,
+			);
+			path = "Dynamic Notifications";
+			sourceTree = "<group>";
+		};
+		3F5C6915216D06F5004517A0 /* Dynamic Interactive Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6909216BEB30004517A0 /* InteractiveNotificationController.swift */,
+			);
+			path = "Dynamic Interactive Notifications";
+			sourceTree = "<group>";
+		};
+		3F5C6916216D0722004517A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C68F9216AA4D0004517A0 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F5C6917216D089F004517A0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6903216AA749004517A0 /* Mock Objects.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3F5C6918216D0A4C004517A0 /* Watch Audio Player */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6919216D0A74004517A0 /* WatchAudioPlayer.swift */,
+			);
+			path = "Watch Audio Player";
+			sourceTree = "<group>";
+		};
+		3F5C6922216E837D004517A0 /* Sequence Player */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C6925216E83A9004517A0 /* SequencePlayer.swift */,
+			);
+			path = "Sequence Player";
 			sourceTree = "<group>";
 		};
 		3FDE9E0B21688AD700AF3BEB = {
@@ -428,6 +560,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5C6269216937E0004517A0 /* Assets.xcassets in Resources */,
+				3F5C691C216D2735004517A0 /* 5-seconds-of-silence.mp3 in Resources */,
+				3F5C6921216D4249004517A0 /* Hooded.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +593,8 @@
 				3F5C6265216937E0004517A0 /* ExtensionDelegate.swift in Sources */,
 				3F5C6263216937E0004517A0 /* InterfaceController.swift in Sources */,
 				3F5C690A216BEB30004517A0 /* InteractiveNotificationController.swift in Sources */,
+				3F5C691A216D0A74004517A0 /* WatchAudioPlayer.swift in Sources */,
+				3F5C6926216E83A9004517A0 /* SequencePlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +674,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7HAT4WQVC;
-				INFOPLIST_FILE = "Dash-Dot-Dash Watch Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Dash-Dot-Dash Watch Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,7 +696,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7HAT4WQVC;
-				INFOPLIST_FILE = "Dash-Dot-Dash Watch Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Dash-Dot-Dash Watch Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +720,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7HAT4WQVC;
 				IBSC_MODULE = Dash_Dot_Dash_Watch_Extension;
-				INFOPLIST_FILE = "Dash-Dot-Dash Watch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Dash-Dot-Dash Watch/Supporting Files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gio.Dash-Dot-Dash.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -603,7 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7HAT4WQVC;
 				IBSC_MODULE = Dash_Dot_Dash_Watch_Extension;
-				INFOPLIST_FILE = "Dash-Dot-Dash Watch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Dash-Dot-Dash Watch/Supporting Files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gio.Dash-Dot-Dash.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -620,7 +756,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7HAT4WQVC;
-				INFOPLIST_FILE = "Dash-Dot-Dash Tests/Info.plist";
+				INFOPLIST_FILE = "Dash-Dot-Dash Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -641,7 +777,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7HAT4WQVC;
-				INFOPLIST_FILE = "Dash-Dot-Dash Tests/Info.plist";
+				INFOPLIST_FILE = "Dash-Dot-Dash Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
