@@ -90,10 +90,8 @@ class WatchAudioPlayer {
     /// - Parameter resource: the file path
     /// - Returns: the constructed url or nil, if no valid file path was passed
     private func audioFileURL(for resource: String) -> URL? {
-        guard let bundle = Bundle(identifier: "com.gio.Dash-Dot-Dash.watchkitapp.watchkitextension") else {
-            return nil
-        }
-        guard let audioFilePath = bundle.path(forAuxiliaryExecutable: resource) else {
+        
+        guard let audioFilePath = Bundle.main.path(forAuxiliaryExecutable: resource) else {
             return nil
         }
         return URL(fileURLWithPath: audioFilePath)
