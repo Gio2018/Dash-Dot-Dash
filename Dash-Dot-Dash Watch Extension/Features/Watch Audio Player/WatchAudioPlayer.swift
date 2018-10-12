@@ -17,14 +17,24 @@ class WatchAudioPlayer {
     private var audioPlayer: AVAudioPlayerNode
     private var musicPlayer: AVAudioPlayer?
     private var audioEngine: AVAudioEngine
+    private var audioFile: AVAudioFile?
     
-    init() {
+    
+    #warning("TODO: make this initializer failable, if the final solution is AVAudioEngine")
+    init(with resource: String) {
         audioPlayer = AVAudioPlayerNode()
         audioEngine = AVAudioEngine()
         audioEngine.attach(audioPlayer)
         
+        guard let audioFile = audioFile(for: resource) else {
+            print("AUDIO MODE ERROR: unable to construct audio file from resource")
+            return
+        }
+        
+        self.audioFile = audioFile
+        
         do {
-            try start()
+            try start(with: audioFile)
         } catch {
             print("Audio player did not start: \(error)")
         }
@@ -49,8 +59,8 @@ class WatchAudioPlayer {
             }
         }
         else {
-            guard let audioFile = audioFile(for: resource) else {
-                print("AUDIO MODE ERROR: unable to construct audio file from resource")
+            guard let audioFile = self.audioFile else {
+                print("AUDIO MODE ERROR: Audio file is nil")
                 return
             }
             play(file: audioFile)
@@ -60,10 +70,9 @@ class WatchAudioPlayer {
     /// Starts the AVAudioEngine instance
     ///
     /// - Throws: AVAudioEngine start errors
-    private func start() throws {
+    private func start(with audioFile: AVAudioFile) throws {
         guard !audioEngine.isRunning else { return }
-        
-        let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)
+        let audioFormat = audioFile.processingFormat
         audioEngine.connect(audioPlayer, to: audioEngine.mainMixerNode, format: audioFormat)
         try audioEngine.start()
     }

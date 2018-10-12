@@ -17,19 +17,21 @@ struct SequenceConfig {
     var playSound: Bool
     var playHaptic: Bool
     var musicMode: Bool
+    var sequenceInterval: TimeInterval
 }
 
 
 /// Renders an audio + haptic sequence dictionary
 class SequencePlayer {
     
-    private let audioPlayer = WatchAudioPlayer()
+    private var audioPlayer: WatchAudioPlayer?
     
     private var config = SequenceConfig(soundFile: "",
                                hapticSequence: [],
                                playSound: false,
                                playHaptic: false,
-                               musicMode: false)
+                               musicMode: false,
+                               sequenceInterval: 0.6)
     
     
     /// Sets the desired sequence configuration
@@ -45,6 +47,7 @@ class SequencePlayer {
         }
         if let soundFile = userInfo["soundFile"] as? String {
             config.soundFile = soundFile
+            audioPlayer = WatchAudioPlayer(with: soundFile)
         }
         if let musicMode = userInfo["musicMode"] as? Bool {
             config.musicMode = musicMode
@@ -52,13 +55,20 @@ class SequencePlayer {
         if let hapticSequence = userInfo["hapticSequence"] as? [Int] {
             config.hapticSequence = hapticSequence
         }
+        if let sequenceInterval = userInfo["sequenceInterval"] as? TimeInterval {
+            config.sequenceInterval = sequenceInterval
+        }
+    }
+    
+    internal func initAudio() {
+        
     }
     
     /// Executes the requested sequence, based on the stored configuration
     internal func execute() {
         if config.playSound {
             DispatchQueue.main.async {
-                self.audioPlayer.play(from: self.config.soundFile, musicMode: self.config.musicMode)
+                self.audioPlayer?.play(from: self.config.soundFile, musicMode: self.config.musicMode)
             }
         }
         
@@ -68,7 +78,7 @@ class SequencePlayer {
                 
                 switch sequenceValue {
                 case -1:
-                    delay += 0.6
+                    delay += config.sequenceInterval
                 default:
                     if let type = WKHapticType(rawValue: sequenceValue) {
                         Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {_ in
@@ -76,7 +86,7 @@ class SequencePlayer {
                         }
                     }
                 }
-                delay += 0.6
+                delay += config.sequenceInterval
             }
         }
     }
