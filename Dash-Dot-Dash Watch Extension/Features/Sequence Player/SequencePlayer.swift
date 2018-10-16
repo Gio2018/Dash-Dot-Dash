@@ -10,6 +10,8 @@ import Foundation
 import WatchKit
 
 
+
+
 /// Configuration parameters for an audio + haptic sequence
 struct SequenceConfig {
     var soundFile: String
@@ -18,6 +20,7 @@ struct SequenceConfig {
     var playHaptic: Bool
     var musicMode: Bool
     var sequenceInterval: TimeInterval
+    var playerType: PlayerType
 }
 
 
@@ -31,7 +34,8 @@ class SequencePlayer {
                                playSound: false,
                                playHaptic: false,
                                musicMode: false,
-                               sequenceInterval: 0.6)
+                               sequenceInterval: 0.6,
+                               playerType: .avPlayer)
     
     
     /// Sets the desired sequence configuration
@@ -39,15 +43,17 @@ class SequencePlayer {
     /// - Parameter userInfo: configuration dictionary
     internal func setConfiguration(userInfo: [AnyHashable : Any]) {
         
+        if let type = userInfo["playerType"] as? Int,
+            let playerType = PlayerType(rawValue: type),
+            let soundFile = userInfo["soundFile"] as? String {
+            
+            audioPlayer = WatchAudioPlayer(with: soundFile, playerType: playerType)
+        }
         if let playSound = userInfo["playSound"] as? Bool {
             config.playSound = playSound
         }
         if let playHaptic = userInfo["playHaptic"] as? Bool {
             config.playHaptic = playHaptic
-        }
-        if let soundFile = userInfo["soundFile"] as? String {
-            config.soundFile = soundFile
-            audioPlayer = WatchAudioPlayer(with: soundFile)
         }
         if let musicMode = userInfo["musicMode"] as? Bool {
             config.musicMode = musicMode
@@ -68,7 +74,7 @@ class SequencePlayer {
     internal func execute() {
         if config.playSound {
             DispatchQueue.main.async {
-                self.audioPlayer?.play(from: self.config.soundFile, musicMode: self.config.musicMode)
+                self.audioPlayer?.playAudio()
             }
         }
         
